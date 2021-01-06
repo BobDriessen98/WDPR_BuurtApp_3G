@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Homepage";
+}
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container-fluid bg-3 text-center">
+        <div class="text-center">
+            <h1 class="display-4">Welkom bij BuurSecuur</h1>
+            <p>De buurtapp van 2020!</p>
+        </div>
+    </div>
+    <!-- First Container -->
+    <div class="container-fluid bg-1 text-center">
+        <h3 class="margin">Wat is BuurSecuur?</h3>
+        <img src="https://media.discordapp.net/attachments/779322662677250089/781544050989072414/buursecuurlogo.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+        <h4>
+            Wij zijn BuurSecure, de buurtapp waar u terecht kunt voor al het nieuws in uw wijk zonder dat u zich zorgen hoeft te maken voor uw privacy.
+            Op BuurSecuur kunt u meldingen maken van problemen en zien wat voor problemen er nog verder zijn in uw buurt.
+        </h4>
+    </div>
+
+    <!-- Second Container -->
+    <div class="container-fluid bg-2 text-center">
+        <h3 class="margin">Wie zijn wij?</h3>
+        <p>
+            Wij zijn een bedrijf van 4 personen dat zich specialiseert in websites bouwen. Wij studeren ICT op de HHS en weten hierdoor veel over privacy en security in apps.
+            Deze buurtapp hebben wij gemaakt om ervoor te zorgen dat u met een veilig gevoel uw wijk door kan.
+            Ook hebben wij deze buurtapp gemaakt met een focus op uw privacy en security, zodat u zich net zo weinig zorgen hoeft te maken over uw gegevens als over uw wijk.
+        </p>
+        <button asp-area="" asp-controller="Home" asp-action="Helpdesk" class="btn btn-primary">Contacteer ons</button>
+    </div>
+
+    <!-- Third Container (Grid) -->
+    <div class="container-fluid bg-3 text-center">
+        <h3 class="margin">Wat kunt u op BuurSecuur?</h3><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="https://www.afm.nl/~/profmedia/images/nieuwsberichten/blauw/praatballonnen.gif" class="img-responsive margin crop" style="width:100%" alt="Image">
+                <p>
+                    Op BuurSecuur kunt u publiek en anoniem meldingen plaatsen, deze meldingen kunnen andere mensen zien.
+                    En samen kan iedereen er voor zorgen dat er een oplossing komt voor een melding
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <img src="https://www.cisco.com/c/dam/assets/swa/img/anchor-info/what-is-it-security-628x353.jpg" class="img-responsive margin crop" style="width:100%" alt="Image">
+                <p>
+                    BuurSecuur heeft een grote prioriteit op uw privacy en security.
+                    Daarom kunt u op elk gewenst moment uw persoonsgegevens op vragen, waardoor u altijd kunt zien wat wij van u weten.
+                    En natuurlijk is er ook altijd een optie om uw account inclkusief alle bijhorende gegevens te verwijderen.
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <img src="https://www.rug.nl/hrm-ob/bloggen/blog-23-05-2017-oplossing-zonder-probleem-een-vreemd-idee!attachment?c=images/blog-image-normal.jpg" class="img-responsive margin crop" style="width:100%" alt="Image">
+                <p>
+                    Op alle meldingen is er een optie om een reactie te plaatsen en op elke oplossing voor die melding kan een like gegeven worden,
+                    hierdoor kunt u zelf meehelpen aan oplossingen voor problemen in uw buurt.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

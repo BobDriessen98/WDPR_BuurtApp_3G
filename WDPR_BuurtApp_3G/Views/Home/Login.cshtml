@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+  <style>
+      form {
+          width: 400px;
+          height: 500px;
+      }
+  </style>
+  <div class="row">
+        <div class="col-sm-6">
+            <h1>Login</h1>
+            <form>
+                <div class="form-group">
+                    <label for="Email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Vul hier je email in">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Vul hier je password in">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Inloggen</button>
+            </form>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Forgot password? </a>
+        </div>
+
+        <div class="col-sm-6">
+            <h1>Maak een nieuw account</h1>
+            <form>
+                <div class="form-group">
+                    <label for="Achternaam">Voornaam</label>
+                    <input type="text" class="form-control" id="voornaam" aria-describedby="voornaamHelp" placeholder="Vul hier je voornaam in">
+                </div>
+                <div class="form-group">
+                    <label for="Achternaam">Achternaam</label>
+                    <input type="text" class="form-control" id="achternaam" aria-describedby="achternaamHelp" placeholder="Vul hier je achternaam in">
+                </div>
+                <div class="form-group">
+                    <label for="Telefoonnummer">Telefoonnummer</label>
+                    <input type="number" class="form-control" id="telefoonnummer" aria-describedby="telefoonnummerHelp" placeholder="Vul hier je telefoonnummer in">
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Vul hier je email in">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Vul hier je password in">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Ik accepteer de voorwaarden</label>
+                </div>
+                <small id="=" class="form-text text-muted">Gebruik alsjeblieft niet uw bankwachtwoord. We hebben erg weinig moeite gestoken in de security van deze applicatie.</small>
+                <br>
+                <button type="submit" class="btn btn-primary">Aanmaken</button>
+            </form>
+        </div>
+    </div>
+

@@ -1,0 +1,167 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+    a.navbar-brand:hover {
+        color: #1da78b !important;
+    }
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+.navbar-nav li a:hover {
+    color: #1da78b !important;
+}
+
+a {
+    color: #ffffff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1da78b;
+    border-color: #167a66;
+}
+
+.bg-custom {
+    background-color: rgb(51, 51, 51);
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+#content {
+    padding-bottom: 100px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    min-height: 100%;
+}
+
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #5c5c5c !important;
+    background-color: #dae8ec;
+}
+
+p {
+    font-size: 16px;
+}
+
+.margin {
+    margin-bottom: 45px;
+}
+
+.bg-1 {
+    background-color: #0488BF; /* blue */
+    color: #ffffff;
+}
+
+.bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+
+.bg-3 {
+    background-color: #d3d8da;
+    color: #555555;
+}
+
+.bg-4 {
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+}
+
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.footer {
+    font: 20px Montserrat, sans-serif;
+    background-color: #aaaaaa;
+    color: #525252;
+    width: 100%;
+    height: 5%;
+    white-space: nowrap;
+    margin-top: 5%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+
+
+.logo-image {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+
+.my-sidebar {
+    -ms-flex: 0 0 550px;
+    flex: 0 0 550px;
+    width: 50%;
+    background-color: rgb(99, 99, 99);
+    color: #d6d6d6;
+}
+
+.body-error {
+    text-align: center;
+    font-size: large;
+    background-image: "https://c4.wallpaperflare.com/wallpaper/400/987/710/windows-crash-error-wallpaper-preview.jpg";
+}
+
+.crop {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+    .crop img {
+        width: 400px;
+        height: 500px;
+        margin: -75px 0 0 -100px;
+    }

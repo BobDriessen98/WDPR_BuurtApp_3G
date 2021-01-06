@@ -1,0 +1,188 @@
+﻿@model GepagineerdeLijst<Melding>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+
+<div class="row bg-3 container-fluid">
+    <div class="col-sm-12 text-center">
+        <h1 class="display-4">Meldingen</h1>
+    </div>
+    @if ((bool)ViewData["UserIsModerator"])
+    {
+        <a asp-controller="Meldings" asp-action="BeheerMeldingen">Beheer meldingen</a>
+    }
+    @if (Model.HeeftVorige())
+    {
+
+        <a style="text-align: left;" asp-action="OverzichtMeldingen"
+           asp-route-pagina="@(@Model.Pagina - 1)"
+           asp-route-sorteerVolgorde='@ViewData["sorteerVolgorde"]'
+           asp-route-sorteerType='@ViewData["sorteerType"]'
+           asp-route-Filter='@ViewData["Filter"]'>Vorige</a>
+    }
+    @if (Model.HeeftVolgende())
+    {
+        <div style="text-align:right;">
+            <a asp-action="OverzichtMeldingen"
+               asp-route-pagina="@(@Model.Pagina + 1)"
+               asp-route-sorteerVolgorde='@ViewData["sorteerVolgorde"]'
+               asp-route-sorteerType='@ViewData["sorteerType"]'
+               asp-route-Filter='@ViewData["Filter"]'>Volgende</a>
+        </div>
+
+    }
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <form asp-action="OverzichtMeldingen" method="get">
+            <label for="sorteerType">Sorteer op:</label>
+            <select id="sorteerType" name="sorteerType" size="1">
+                @if ("Datum".Equals(ViewData["SorteerType"]) || ViewData["sorteerType"] == null)
+                {
+                    <option selected value="Datum">Datum</option>
+                }
+                else
+                {
+                    <option value="Datum">Datum</option>
+                }
+                @if ("Likes".Equals(ViewData["SorteerType"]))
+                {
+                    <option selected value="Likes">Likes</option>
+                }
+                else
+                {
+                    <option value="Likes">Likes</option>
+                }
+                @if ("Reacties".Equals(ViewData["SorteerType"]))
+                {
+                    <option selected value="Reacties">Reacties</option>
+                }
+                else
+                {
+                    <option value="Reacties">Reacties</option>
+                }
+            </select><br />
+
+            <label for="sorteerVolgorde">Volgorde</label>
+            <select id="sorteerVolgorde" name="sorteerVolgorde" size="1">
+
+                @if ("oplopend".Equals(ViewData["sorteerVolgorde"]))
+                {
+                    <option selected value="oplopend">↑ Oplopend</option>
+                }
+                else
+                {
+                    <option value="oplopend">↑ Oplopend</option>
+                }
+                @if ("aflopend".Equals(ViewData["sorteerVolgorde"]) || ViewData["sorteerVolgorde"] == null)
+                {
+                    <option selected value="aflopend">↓ Aflopend</option>
+                }
+                else
+                {
+                    <option value="aflopend">↓ Aflopend</option>
+                }
+            </select><br />
+            <label for="status">Status:</label>
+            <select id="status" name="status" size="1">
+                @if ("Open".Equals(ViewData["Status"]))
+                {
+                    <option selected value="Open">Open</option>
+                }
+                else
+                {
+                    <option value="Open">Open</option>
+                }
+                @if ("Gesloten".Equals(ViewData["Status"]))
+                {
+                    <option selected value="Gesloten">Gesloten</option>
+                }
+                else
+                {
+                    <option value="Gesloten">Gesloten</option>
+                }
+                @if ("Toon alles".Equals(ViewData["Status"]))
+                {
+                    <option selected value="Toon alles">Toon alles</option>
+                }
+                else
+                {
+                    <option value="Toon alles">Toon alles</option>
+                }
+            </select><br />
+            <label for="poster">Van:</label>
+            <select id="poster" name="poster" size="1">
+                @if ("Toon alles".Equals(ViewData["Poster"]))
+                {
+                    <option selected value="Toon alles">Iedereen</option>
+                }
+                else
+                {
+                    <option value="Toon alles">Iedereen</option>
+                }
+                @if ("Eigen".Equals(ViewData["Poster"]))
+                {
+                    <option selected value="Eigen">Mijzelf</option>
+                }
+                else
+                {
+                    <option value="Eigen">Mijzelf</option>
+                }
+            </select><br />
+            <label for="start">Startdatum</label><br />
+            <input type="date" id="date1" name="date1" value='@ViewData["Date1"]'><br />
+            <label for="start">Einddatum</label><br />
+            <input type="date" id="date2" name="date2" value='@ViewData["Date2"]'><br />
+            @if ((bool)@ViewData["Likedby"])
+            {
+                <input type="checkbox" id="likedby" name="likedby" value="true" checked>
+                <label for="likedby">Toon alleen mijn likes</label><br>
+            }
+            else
+            {
+                <input type="checkbox" id="likedby" name="likedby" value="true">
+                <label for="likedby">Toon alleen mijn likes</label><br>
+            }
+
+            <input type="hidden" class="btn btn-primary"> Zoek: <input type="text" name="filter" value='@ViewData["Filter"]' />
+            <input type="hidden" name="pagina" value=0 />
+            <input type="submit" value="Filter" class="btn btn-primary" />
+        </form>
+        <a asp-action="OverzichtMeldingen">Reset</a>
+    </div>
+    <div class="col-md-9">
+        @foreach (Melding item in Model)
+        {
+            <div class="row bg-2 container-fluid" >
+                <div class="col-sm-4">
+                    <img src="@item.Foto" class="img-responsive margin rounded float-left img-thumbnail" style="width:100%" alt="Image">
+                </div>
+                <div class="col-sm-8" style="text-align:left;">
+                    <h3><strong>@item.Titel</strong></h3>
+                    <h4>@item.Categorie.Naam</h4>
+                    <h6>Door: @item.User.UserName</h6>
+                    <p>@if (item.Omschrijving.Length > 150) {@item.Omschrijving.Substring(0, 100)} else {@item.Omschrijving}<a asp-action="Details" asp-route-id="@item.MeldingID">Lees verder</a></p>
+                    <div class="row"></div>
+                    <h6 style="text-align:left;">
+                        @item.Datum |
+                        @Html.Raw("Bekeken:") @item.AantalViews |
+                        @Html.Raw("Aantal likes:")  @if (item.Likes.Any())
+                        {@item.Likes.Count()}
+                    else
+                    { @Html.Raw("0")} |
+                        @Html.Raw("Aantal reacties:")  @if (item.Reacties.Any())
+                        {@item.Reacties.Count()}
+                    else
+                    { @Html.Raw("0")}
+                    </h6>
+                </div>
+            </div>
+            <br />
+        }
+    </div>
+</div>
+ 
